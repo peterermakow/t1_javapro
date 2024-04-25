@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  postgres:
+    container_name: postgres_14
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: "database"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"

@@ -12,6 +12,7 @@
         <module>reflection_module</module>
         <module>streamapi_module</module>
         <module>multithreading</module>
+        <module>springcontext_module</module>
     </modules>
 
     <properties>
