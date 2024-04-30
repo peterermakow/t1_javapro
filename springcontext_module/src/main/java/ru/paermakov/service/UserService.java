@@ -1,31 +1,33 @@
 package ru.paermakov.service;
 
-import ru.paermakov.dao.UserDAO;
+import org.springframework.stereotype.Service;
+import ru.paermakov.repository.UserRepository;
 import ru.paermakov.entity.User;
 
 import java.util.List;
 
+@Service
 public class UserService {
 
-    private final UserDAO userDAO;
+    private final UserRepository userRepository;
 
-    public UserService(UserDAO userDAO) {
-        this.userDAO = userDAO;
+    public UserService(UserRepository userDAO) {
+        this.userRepository = userDAO;
     }
 
     public List<User> getAllUsers() {
-        return userDAO.getAllUsers();
+        return userRepository.getAllUsers();
     }
 
     public User getUserById(Long id) {
-        return userDAO.getUserById(id).orElseThrow(() -> new RuntimeException("User not found in database"));
+        return userRepository.getUserById(id).orElseThrow(() -> new RuntimeException("User not found in database"));
     }
 
     public void saveUser(User user) {
-        userDAO.saveUser(user);
+        userRepository.saveUser(user);
     }
 
     public void deleteUserById(Long id) {
-        userDAO.deleteUserById(id);
+        userRepository.deleteUserById(id);
     }
 }

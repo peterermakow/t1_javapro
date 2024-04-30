@@ -15,14 +15,14 @@ public class Main {
         // получаем всех пользователей
         userService.getAllUsers().forEach(System.out::println);
 
-        // получаем пользователя по id
-        User user = userService.getUserById(2L);
-        System.out.println(user.toString());
-
-        // сохраняем юзера
-        userService.saveUser(new User(5L, "Anonymous user"));
-
-        // удаляем юзера
-        userService.deleteUserById(5L);
+//        // получаем пользователя по id
+//        User user = userService.getUserById(2L);
+//        System.out.println(user.toString());
+//
+//        // сохраняем юзера
+//        userService.saveUser(new User(5L, "Anonymous user"));
+//
+//        // удаляем юзера
+//        userService.deleteUserById(5L);
     }
 }
